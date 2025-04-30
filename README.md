@@ -1,17 +1,17 @@
-**EXPERIMENT 7: IMPLEMENTATION OF JKFLIPFLOP**
+# EXPERIMENT 7: IMPLEMENTATION OF JKFLIPFLOP
 # NAME.- DEEPIKA G
 # REG NO.- 212224040060
-**AIM:** 
+# AIM: 
 
 To implement  JK flipflop using verilog and validating their functionality using their functional tables
 
-**SOFTWARE REQUIRED**
+# SOFTWARE REQUIRED:
 
 Quartus prime
 
-**THEORY**
+# THEORY:
 
-**JK FLIP-FLOP**
+# JK FLIP-FLOP:
 
 JK flip-flop is the modified version of SR flip-flop. It operates with only positive clock transitions or negative clock transitions. The circuit diagram of JK flip-flop is shown in the following figure.
 
@@ -33,7 +33,7 @@ By using three variable K-Map, we can get the simplified expression for next sta
 
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=JQ(t)′+K′Q(t)Q(t+1)=JQ(t)′+K′Q(t)
 
-**PROCEDURE**
+# PROCEDURE:
  
  step-1 Go to Quartus software.
  
@@ -48,20 +48,25 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
  
  step-6 Run the program.
 
-**PROGRAM**
+# PROGRAM:
 
-![17362290696322226041717544326238](https://github.com/user-attachments/assets/859f4b97-a1ae-4ca4-b77c-e75ec61f8ead)
+module ex7(J,K,clk,q,qbar); 
+input J, K, clk; 
+output reg q; 
+output qbar;
+ always @(posedge (clk)) begin q <= ((J&(~q))|((~K)&q)); 
+ end assign qbar=(~q);
+ endmodule
 
-**RTL LOGIC FOR FLIPFLOPS**
+# RTL LOGIC FOR FLIPFLOPS:
 
-![image](https://github.com/user-attachments/assets/4845638d-fc5d-4de0-98c7-12a4832c8098)
+![Screenshot 2025-04-30 101408](https://github.com/user-attachments/assets/9f305e7b-bedd-44f4-80fc-e33a6e44a022)
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
+# Wave form FOR FLIP FLOPS:
 
-![image](https://github.com/user-attachments/assets/3548b0bc-8f2c-4527-bd28-3cda3d2ed03c)
+![Screenshot 2025-04-30 101359](https://github.com/user-attachments/assets/6720913d-7303-4aed-8325-bbe1b7eba358)
 
-
-**RESULTS**
+# RESULTS:
 
  Implementing JK flipflop using Verilog and validating their functionality using their functional tables
  is executed and the output is verified successfully.
